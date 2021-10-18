@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         
         addSubviews()
         
-        passwordView.logInButton.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
+        passwordView.enterButton.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
@@ -56,12 +56,12 @@ class LoginViewController: UIViewController {
             emailView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             emailView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             emailView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            emailView.heightAnchor.constraint(equalToConstant: 177.0),
+//            emailView.heightAnchor.constraint(equalToConstant: 177.0),
             
             passwordView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             passwordView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            passwordView.topAnchor.constraint(equalTo: emailView.safeAreaLayoutGuide.bottomAnchor, constant: -100),
-            passwordView.heightAnchor.constraint(equalToConstant: 177.0)
+            passwordView.topAnchor.constraint(equalTo: emailView.bottomAnchor, constant: -100),
+//            passwordView.heightAnchor.constraint(equalToConstant: 177.0)
         ])
     }
 }

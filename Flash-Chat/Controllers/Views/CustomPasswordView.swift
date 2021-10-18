@@ -27,7 +27,7 @@ class CustomPasswordView: UIView {
         return passImage
     }()
 
-    lazy var logInButton: CustomButtonClass = {
+    lazy var enterButton: CustomButtonClass = {
         var button = CustomButtonClass()
         
         return button
@@ -52,7 +52,7 @@ class CustomPasswordView: UIView {
     fileprivate func addSubviews() {
         addSubview(passwordImageView)
         addSubview(passwordTextField)
-        addSubview(logInButton)
+        addSubview(enterButton)
     }
 
     fileprivate func setupImageView() {
@@ -63,8 +63,8 @@ class CustomPasswordView: UIView {
     }
     
     fileprivate func setupLoginButton() {
-        logInButton.setTitle("Log In", for: .normal)
-        logInButton.setTitleColor(UIColor(named: K.BrandColor.lighBlue), for: .normal)
+        enterButton.setTitle("Log In", for: .normal)
+        enterButton.setTitleColor(UIColor(named: K.BrandColor.lighBlue), for: .normal)
     }
     
     //MARK: - Constraints
@@ -85,9 +85,9 @@ class CustomPasswordView: UIView {
             passwordTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -49.0),
             passwordTextField.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -81.0),
             
-            logInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 31),
-            logInButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            logInButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            enterButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 31),
+            enterButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            enterButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
         ])
     }
 }

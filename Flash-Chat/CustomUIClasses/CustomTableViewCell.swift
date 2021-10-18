@@ -11,7 +11,7 @@ class CustomTableViewCell: UITableViewCell {
     
     var myLable: UILabel = {
         let myLabel = UILabel()
-        myLabel.textColor = .white
+        myLabel.textColor = .black
         myLabel.font = .systemFont(ofSize: 17, weight: .bold)
         myLabel.text = "Custom Cell!"
         
@@ -21,7 +21,7 @@ class CustomTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.backgroundColor = .orange
+//        contentView.backgroundColor = .orange
         contentView.addSubview(myLable)
     }
     

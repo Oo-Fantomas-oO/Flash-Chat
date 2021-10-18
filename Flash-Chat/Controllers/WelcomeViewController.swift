@@ -30,7 +30,7 @@ class WelcomeViewController: UIViewController {
         button.setTitle("Register", for: .normal)
         button.setTitleColor(UIColor(named: K.BrandColor.blue), for: .normal)
         button.backgroundColor = UIColor(named: K.BrandColor.lighBlue)
-        button.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(registerButtonTapped(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -63,19 +63,21 @@ class WelcomeViewController: UIViewController {
 //        let navVC = UINavigationController(rootViewController: loginVC)
 //        navVC.modalPresentationStyle = .fullScreen
 //        present(navVC, animated: true, completion: nil)
-        navigationController?.modalPresentationStyle = .overCurrentContext
+//        navigationController?.modalPresentationStyle = .overCurrentContext
         navigationController?.pushViewController(loginVC, animated: true)
     }
     
-    @objc fileprivate func registerButtonTapped() {
+    @objc fileprivate func registerButtonTapped(_ sender: Any) {
         let registerVC = RegisterViewController()
-        present(registerVC, animated: true, completion: nil)
+//        navigationController?.modalPresentationStyle = .overCurrentContext
+        navigationController?.pushViewController(registerVC, animated: true)
     }
     
     //MARK: - Constraints
 
     fileprivate func setupContentViewConstraints() {
         NSLayoutConstraint.activate([
+            
             logoNameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             logoNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
